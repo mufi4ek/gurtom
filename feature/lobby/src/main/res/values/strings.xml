@@ -1,0 +1,4 @@
+<!-- feature/lobby strings.xml — рядки екрана Lobby (укр. за замовчуванням). -->
+<resources>
+    <string name="lobby_screen_title">Lobby</string>
+</resources>

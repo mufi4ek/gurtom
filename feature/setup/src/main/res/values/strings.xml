@@ -1,0 +1,4 @@
+<!-- feature/setup strings.xml — рядки екрана Setup (укр. за замовчуванням). -->
+<resources>
+    <string name="setup_screen_title">Setup</string>
+</resources>
