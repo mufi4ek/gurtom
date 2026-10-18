@@ -1,0 +1,46 @@
+nohup: ignoring input
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: :core:designsystem:assembleDebug :core:designsystem:testDebugUnitTest
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=ca225ab1-b146-4503-b228-798553af99ea, currentDir=/workspace}
+Attempting to read last messages from the daemon log...
+Daemon pid: 5041
+  log file: /root/.gradle/daemon/8.14.3/daemon-5041.out.log
+----- Last 20 lines from daemon log file - daemon-5041.out.log -----
+2026-10-18T18:11:19.706+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=ca225ab1-b146-4503-b228-798553af99ea, currentDir=/workspace}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:46409 to /127.0.0.1:58344] after 0.0023666666666666667 minutes of idle
+2026-10-18T18:11:19.707+0000 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [95c9b7d0-11f1-4b59-a1f8-f9e05f10bc90 port:46409, addresses:[localhost/127.0.0.1]]
+2026-10-18T18:11:19.707+0000 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [95c9b7d0-11f1-4b59-a1f8-f9e05f10bc90 port:46409, addresses:[localhost/127.0.0.1]]
+2026-10-18T18:11:19.707+0000 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2026-10-18T18:11:19.707+0000 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-10-18T18:11:19.708+0000 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2026-10-18T18:11:19.708+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+2026-10-18T18:11:19.708+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2026-10-18T18:11:19.711+0000 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=ca225ab1-b146-4503-b228-798553af99ea, currentDir=/workspace}. Dispatching build started information...
+2026-10-18T18:11:19.712+0000 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 21: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@13625395
+2026-10-18T18:11:19.716+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [TMUX_PANE, PATH, TERM, LANG, PS2, ANDROID_HOME, PS1, SUDO_USER, SUDO_GID, MAIL, PYGAME_HIDE_SUPPORT_PROMPT, LOGNAME, PROMPT_COMMAND, PWD, SUDO_UID, TERM_PROGRAM_VERSION, _, SHELL, TERM_PROGRAM, OLDPWD, USER, TIKTOKEN_CACHE_DIR, SUDO_COMMAND, LC_ALL, TMUX, HOME, SHLVL]
+2026-10-18T18:11:19.761+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+2026-10-18T18:11:19.761+0000 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 5041). The daemon log file: /root/.gradle/daemon/8.14.3/daemon-5041.out.log
+2026-10-18T18:11:19.763+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon] Requesting daemon stop after processing Build{id=ca225ab1-b146-4503-b228-798553af99ea, currentDir=/workspace}
+2026-10-18T18:11:19.763+0000 [LIFECYCLE] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon will be stopped at the end of the build 
+2026-10-18T18:11:19.763+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Stop as soon as idle requested. The daemon is busy
+2026-10-18T18:11:19.763+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon stop has been requested. Sleeping until state changes.
+2026-10-18T18:11:19.764+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-10-18T18:11:19.764+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=835956f3-7790-4f3b-9e3a-25296b5613f3,javaHome=/usr/lib/jvm/java-17-openjdk-amd64,javaVersion=17,javaVendor=Debian,daemonRegistryDir=/root/.gradle/daemon,pid=5041,idleTimeout=120000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=512m,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+Calculating task graph as no cached configuration is available for tasks: :core:designsystem:assembleDebug :core:designsystem:testDebugUnitTest----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+> Task :buildSrc:compilePluginsBlocks
