@@ -1,0 +1,132 @@
+[
+ {
+  "id": "traits",
+  "uk": "Ознаки та якості",
+  "en": "Traits & Qualities"
+ },
+ {
+  "id": "animals",
+  "uk": "Тварини",
+  "en": "Animals"
+ },
+ {
+  "id": "plants",
+  "uk": "Рослини й природа",
+  "en": "Plants & Nature"
+ },
+ {
+  "id": "food",
+  "uk": "Їжа та напої",
+  "en": "Food & Drinks"
+ },
+ {
+  "id": "people",
+  "uk": "Людина та родина",
+  "en": "People & Family"
+ },
+ {
+  "id": "profession",
+  "uk": "Професії та робота",
+  "en": "Jobs & Work"
+ },
+ {
+  "id": "body",
+  "uk": "Тіло та здоров'я",
+  "en": "Body & Health"
+ },
+ {
+  "id": "home",
+  "uk": "Дім і побут",
+  "en": "Home & Objects"
+ },
+ {
+  "id": "clothes",
+  "uk": "Одяг і взуття",
+  "en": "Clothes & Shoes"
+ },
+ {
+  "id": "transport",
+  "uk": "Транспорт",
+  "en": "Transport"
+ },
+ {
+  "id": "buildings",
+  "uk": "Будівлі та місця",
+  "en": "Buildings & Places"
+ },
+ {
+  "id": "geography",
+  "uk": "Географія та подорожі",
+  "en": "Geography & Travel"
+ },
+ {
+  "id": "nature_weather",
+  "uk": "Природа та погода",
+  "en": "Nature & Weather"
+ },
+ {
+  "id": "sport",
+  "uk": "Спорт та ігри",
+  "en": "Sport & Games"
+ },
+ {
+  "id": "art_music",
+  "uk": "Мистецтво та музика",
+  "en": "Art & Music"
+ },
+ {
+  "id": "science_tech",
+  "uk": "Наука й техніка",
+  "en": "Science & Tech"
+ },
+ {
+  "id": "emotions",
+  "uk": "Емоції та характер",
+  "en": "Emotions & Character"
+ },
+ {
+  "id": "actions",
+  "uk": "Дії та рух",
+  "en": "Actions & Motion"
+ },
+ {
+  "id": "time_abstract",
+  "uk": "Час і абстрактні поняття",
+  "en": "Time & Abstract"
+ },
+ {
+  "id": "society",
+  "uk": "Суспільство та економіка",
+  "en": "Society & Money"
+ },
+ {
+  "id": "war",
+  "uk": "Війна та зброя",
+  "en": "War & Weapons"
+ },
+ {
+  "id": "religion_myth",
+  "uk": "Релігія та міфи",
+  "en": "Religion & Myth"
+ },
+ {
+  "id": "school",
+  "uk": "Школа та освіта",
+  "en": "School & Education"
+ },
+ {
+  "id": "culture",
+  "uk": "Культура та традиції",
+  "en": "Culture & Traditions"
+ },
+ {
+  "id": "language",
+  "uk": "Мова та слова",
+  "en": "Language & Words"
+ },
+ {
+  "id": "farm",
+  "uk": "Село та господарство",
+  "en": "Farm & Countryside"
+ }
+]
