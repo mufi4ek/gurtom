@@ -1,10 +1,12 @@
-// build.gradle.kts — кореневий скрипт: оголошує плагіни для всього проєкту,
-// застосовуються вони вже в модульних build.gradle.kts.
+// build.gradle.kts — кореневий скрипт: плагіни AGP/Kotlin уже на класовому шляху
+// збірки через :buildSrc (implementation-залежності), тому тут вони оголошені БЕЗ
+// версій (apply false) — інакше Gradle видає "plugin is already on the classpath
+// with an unknown version". KSP/Hilt/serialization застосовуються у модулях.
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.compose) apply false
+    id("com.android.application") apply false
+    id("com.android.library") apply false
+    id("org.jetbrains.kotlin.android") apply false
+    id("org.jetbrains.kotlin.plugin.compose") apply false
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.hilt) apply false
