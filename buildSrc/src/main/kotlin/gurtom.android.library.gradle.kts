@@ -5,16 +5,14 @@ import com.android.build.gradle.TestedExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
-// Плагіни застосовуються без версії (класи вже на classpath buildSrc), а
-// version-catalog DSL у precompiled scripts недоступний — версії беремо з
-// gradle.properties (ключі gurtom.* синхронізовані з gradle/libs.versions.toml).
-val agpVersion = providers.gradleProperty("gurtom.agp").get()
-val kotlinVersion = providers.gradleProperty("gurtom.kotlin").get()
+import gurtom.buildsrc.GurtomVersions
 
+// AGP уже на classpath (:buildSrc застосував його), тому без версії;
+// Kotlin-плагіни — з GurtomVersions (ті ж літерали, що й у каталозі).
 plugins {
-    id("com.android.library") version agpVersion
-    id("org.jetbrains.kotlin.android") version kotlinVersion
-    id("org.jetbrains.kotlin.plugin.compose") version kotlinVersion
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android") version GurtomVersions.KOTLIN
+    id("org.jetbrains.kotlin.plugin.compose") version GurtomVersions.KOTLIN
 }
 
 extensions.configure<BaseExtension> {
