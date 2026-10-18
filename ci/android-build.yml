@@ -22,6 +22,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Умовні кроки не можуть звертатися до `secrets` напряму в `if:` —
+# тому наявність ключа рахуємо в окремому кроці й прокидаємо через outputs.
+
 env:
   JAVA_VERSION: "17"
   GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true"
@@ -171,8 +174,19 @@ jobs:
       #   KEY_ALIAS        = gurtom
       #   KEY_PASSWORD     = <пароль ключа>
       #   STORE_PASSWORD   = <пароль сховища>
+      - name: Detect keystore secret
+        id: keystore-check
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Restore keystore (if secrets present)
-        if: ${{ env.KEYSTORE_BASE64 != '' }}
+        if: steps.keystore-check.outputs.present == 'true'
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
@@ -181,7 +195,7 @@ jobs:
           echo "Keystore restored."
 
       - name: Write signing properties (if secrets present)
-        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
+        if: steps.keystore-check.outputs.present == 'true' 
         env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}

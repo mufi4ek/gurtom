@@ -11,7 +11,11 @@ android {
 
 dependencies {
     implementation(project(":core:designsystem"))
+    implementation(project(":core:database"))
     implementation(project(":data"))
+
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     implementation(platform(libs.compose.bom))
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.hilt.android)

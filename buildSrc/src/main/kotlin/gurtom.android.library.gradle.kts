@@ -1,6 +1,7 @@
 // gurtom.android.library.gradle.kts — конвенції бібліотечного Android-модуля Ґуртом:
 // compileSdk 35, minSdk 24, JVM target 17, Jetpack Compose + Material 3 із BOM.
 import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.TestedExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
@@ -15,6 +16,9 @@ extensions.configure<BaseExtension> {
     defaultConfig {
         minSdk = 24
     }
+    // Юніт-тести на JVM: Compose-залежні класи не лоадяться під час звичайних
+    // unitTest — перетворюємо UnsatisfiedLinkError/NoClassDefFound на null замість падіння.
+    (this as TestedExtension).testOptions.unitTests.isReturnDefaultValues = true
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

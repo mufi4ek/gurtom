@@ -13,7 +13,12 @@ import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
@@ -57,12 +62,23 @@ fun TimerRing(
     val trackColor = scheme.surfaceVariant
     val activeColor = if (warning) scheme.error else scheme.primary
     val strokeWidth = 12.dp
+    // Тротлінг TalkBack: оновлюємо contentDescription лише на позначках 60/30/10/5/0
+    // або не частіше ніж раз на 5 с (чиста функція shouldAnnounceTimer).
+    val remaining = ceilToInt(progress * totalSeconds)
+    var lastAnnounced by remember(totalSeconds) { mutableIntStateOf(remaining) }
+    var announcedText by remember(totalSeconds) { mutableStateOf("Таймер: $remaining с") }
+    LaunchedEffect(remaining) {
+        if (shouldAnnounceTimer(remaining, lastAnnounced)) {
+            lastAnnounced = remaining
+            announcedText = "Таймер: $remaining с"
+        }
+    }
     Box(
         modifier = modifier
             .defaultMinSize(MinTouchTarget, MinTouchTarget)
             .size(160.dp)
             .semantics {
-                contentDescription = "Таймер: ${ceilToInt(progress * totalSeconds)} с"
+                contentDescription = announcedText
                 liveRegion = LiveRegionMode.Polite
             },
         contentAlignment = Alignment.Center,

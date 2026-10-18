@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 /** Базовий стек розмірів для слова в грі (PLAN §7.2 autoSize-варіанти 96/72/56/40). */
-val GurtomAutoSizes = listOf(96.sp, 72.sp, 56.sp, 40.sp)
+val GurtomAutoSizes = listOf(96.sp, 72.sp, 56.sp, 40.sp, 32.sp)
 
 /**
  * Вимірює [text] TextMeasurer'ом для кожного розміру зі стека [sizes] (від найбільшого)
