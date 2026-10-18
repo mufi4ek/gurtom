@@ -1,0 +1,4 @@
+<!-- feature/home strings.xml — рядки екрана Home (укр. за замовчуванням). -->
+<resources>
+    <string name="home_screen_title">Home</string>
+</resources>

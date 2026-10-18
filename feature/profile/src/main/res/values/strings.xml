@@ -1,0 +1,4 @@
+<!-- feature/profile strings.xml — рядки екрана Profile (укр. за замовчуванням). -->
+<resources>
+    <string name="profile_screen_title">Profile</string>
+</resources>

@@ -1,0 +1,4 @@
+<!-- feature/splash strings.xml — рядки екрана Splash (укр. за замовчуванням). -->
+<resources>
+    <string name="splash_screen_title">Splash</string>
+</resources>

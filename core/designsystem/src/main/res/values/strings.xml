@@ -1,0 +1,4 @@
+<!-- core/designsystem strings.xml — спільні рядки UI (мова за замовчуванням — українська). -->
+<resources>
+    <string name="back">Назад</string>
+</resources>

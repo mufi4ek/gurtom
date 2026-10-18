@@ -1,0 +1,36 @@
+<!-- gurtom_logo.xml — векторне лого «Ґуртом»: стилізована літера Ґ (кільце з трьох дуг, що сходяться) + риса вгорі. Тільки шляхи, без растрових зображень і мережі. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Кільце-«гуртом»: три дуги по 100°, що сходяться кінцями під кутами 90/210/330° -->
+    <path
+        android:pathData="M60,18 A42,42 0 0 1 96.4,39 A42,42 0 0 1 96.4,81 A42,42 0 0 1 60,102 A42,42 0 0 1 23.6,81 A42,42 0 0 1 23.6,39 A42,42 0 0 1 60,18 Z"
+        android:strokeColor="#EAF0F6"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+    <!-- Ручка літери Ґ: вертикальний штрих праворуч від кільця -->
+    <path
+        android:pathData="M97,10 L97,45"
+        android:strokeColor="#EAF0F6"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+    <!-- Гак Ґ: коротка дуга на верхівці ручки -->
+    <path
+        android:pathData="M97,10 C90,4 80,6 76,14"
+        android:strokeColor="#EAF0F6"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+    <!-- Центральна крапка — «гравець у центрі гурту» -->
+    <path
+        android:pathData="M60,60 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0"
+        android:fillColor="#EAF0F6"/>
+</vector>

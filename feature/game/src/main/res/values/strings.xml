@@ -1,0 +1,4 @@
+<!-- feature/game strings.xml — рядки екрана Game (укр. за замовчуванням). -->
+<resources>
+    <string name="game_screen_title">Game</string>
+</resources>

@@ -1,0 +1,4 @@
+<!-- feature/settings strings.xml — рядки екрана Settings (укр. за замовчуванням). -->
+<resources>
+    <string name="settings_screen_title">Settings</string>
+</resources>
